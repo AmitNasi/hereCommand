@@ -12,12 +12,7 @@ const sentences = [
 ];
 
 register("command", (name) => {
-    //const randomInt = Math.floor(Math.random() * sentences.length); // Random index within the array length
-
-    const randomBytes = new Uint8Array(1);
-    crypto.getRandomValues(randomBytes);
-    const randomInt = (randomBytes[0] % (sentences.length + 1)) + 0;
-
+    const randomInt = Math.floor(Math.random() * sentences.length); // Random index within the array length
     const randomSentence = sentences[randomInt];
     const finalSentence = randomSentence.replace("<ign>", name);
 
