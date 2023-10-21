@@ -1,4 +1,3 @@
-const crypto = require('crypto');
 const sentences = [
     "He is here, the man they all fear, the one with the greatest clear. He has the fastest runs, he scares all the NONs, <ign> !!",
     "Behold, the virtual legend that is <ign>, the master of gaming, he conquers every room with his mere presence slaying mobs by his mere glance.",
@@ -11,8 +10,14 @@ const sentences = [
     "Whilst delving into the catacombs and facing the most worrisome of enemies; This is the one player you would want on your side <ign>"
 ];
 
+function getRandomIntInclusive(min, max) {
+  min = Math.ceil(min);
+  max = Math.floor(max);
+  return Math.floor(Math.random() * (max - min + 1) + min); // The maximum is inclusive and the minimum is inclusive
+}
+
 register("command", (name) => {
-    const randomInt = Math.floor(Math.random() * sentences.length); // Random index within the array length
+    const randomInt = getRandomIntInclusive(1, sentences.length+1)
     const randomSentence = sentences[randomInt];
     const finalSentence = randomSentence.replace("<ign>", name);
 
