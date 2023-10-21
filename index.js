@@ -12,10 +12,10 @@ var sentences = [
 
 
 register("command", (name) => 
-    var randomInt = Math.floor(Math.random() * 9) + 1;
-    var randomSentence = sentences[randomInt - 1];
+    var randomInt = Math.floor(Math.random() * 9);
+    var randomSentence = sentences[randomInt];
 
-    var finalSentence = randomSentence.replace('<ign>', name);
+    var finalSentence = randomSentence.replace("<ign>", name);
 
     executeCommand("/pc " + finalSentence);
     
