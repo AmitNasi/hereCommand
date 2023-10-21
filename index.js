@@ -1,8 +1,9 @@
+const crypto = require('crypto');
 const sentences = [
     "He is here, the man they all fear, the one with the greatest clear. He has the fastest runs, he scares all the NONs, <ign> !!",
     "Behold, the virtual legend that is <ign>, the master of gaming, he conquers every room with his mere presence slaying mobs by his mere glance.",
     "From the shadows of the game world, emerges a force, a gamer of unmatched secret routes. Brace yourselves for the power of <ign>.",
-    "Can you hear that sound? It’s <ign> coming ‘round, fast in motion never in commotion, his terminator, always sounds like an explosion.",
+    "Can you hear that sound? It\’s <ign> coming \'round, fast in motion never in commotion, his terminator, always sounds like an explosion.",
     "The one with the greatest gaming chair, the greasiest hair, he never needs no showER, <ign> is here to save the day from p-findER",
     "Lo and behold, the man of whom legends are told. He is no troll, he is no joke, before the runs he snorts some coke, <ign>!!",
     "When the battlefield trembles, and the opposition crumbles, there's one name that constantly rumbles <ign>, every mob's worst nightmare.",
@@ -11,9 +12,14 @@ const sentences = [
 ];
 
 register("command", (name) => {
-    const randomInt = Math.floor(Math.random() * sentences.length); // Random index within the array length
+    //const randomInt = Math.floor(Math.random() * sentences.length); // Random index within the array length
+
+    const randomBytes = new Uint8Array(1);
+    crypto.getRandomValues(randomBytes);
+    const randomInt = (randomBytes[0] % (sentences.length + 1)) + 0;
+
     const randomSentence = sentences[randomInt];
     const finalSentence = randomSentence.replace("<ign>", name);
-    
-    executeCommand("/pc " + finalSentence);
+
+    executeCommand(`/pc ${finalSentence}`);
 }).setName("welcome").setAliases("here", "hello");
