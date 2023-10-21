@@ -1,4 +1,4 @@
-var sentences = [
+const sentences = [
     "He is here, the man they all fear, the one with the greatest clear. He has the fastest runs, he scares all the NONs, <ign> !!",
     "Behold, the virtual legend that is <ign>, the master of gaming, he conquers every room with his mere presence slaying mobs by his mere glance.",
     "From the shadows of the game world, emerges a force, a gamer of unmatched secret routes. Brace yourselves for the power of <ign>.",
@@ -7,13 +7,13 @@ var sentences = [
     "Lo and behold, the man of whom legends are told. He is no troll, he is no joke, before the runs he snorts some coke, <ign>!!",
     "When the battlefield trembles, and the opposition crumbles, there's one name that constantly rumbles <ign>, every mob's worst nightmare.",
     "Is it an aeroplane? Is it a bird? NO, it is the man, the myth, the legend- <ign>",
-    "Whilst delving into the catacombs and facing the most worrisome of enemies, This is the one player you would want on your side <ign>"
+    "Whilst delving into the catacombs and facing the most worrisome of enemies; This is the one player you would want on your side <ign>"
 ];
 
 register("command", (name) => {
-    var randomInt = Math.floor(Math.random() * 9); // Random index from 0 to 8
-    var randomSentence = sentences[randomInt];
-    var finalSentence = randomSentence.replace("<ign>", name);
+    const randomInt = Math.floor(Math.random() * sentences.length); // Random index within the array length
+    const randomSentence = sentences[randomInt];
+    const finalSentence = randomSentence.replace("<ign>", name);
     
     executeCommand("/pc " + finalSentence);
 }).setName("welcome").setAliases("here", "hello");
