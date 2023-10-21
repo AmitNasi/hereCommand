@@ -10,22 +10,12 @@ const sentences = [
     "Whilst delving into the catacombs and facing the most worrisome of enemies; This is the one player you would want on your side <ign>"
 ];
 
-function shuffle(array) {
-  let currentIndex = array.length,  randomIndex;
+let idx = 0;
 
-  while (currentIndex > 0) {
-    randomIndex = Math.floor(Math.random() * currentIndex);
-    currentIndex--;
-    [array[currentIndex], array[randomIndex]] = [
-      array[randomIndex], array[currentIndex]];
-  }
-  return array;
-}
+register("command", (user) => {
+  const sentence = sentences[idx];
+  const formattedSentence = sentence.replace("<ign>", user);
 
-register("command", (name) => {
-    const newSentences = shuffle(sentences);
-    const randomSentence = newSentences[0];
-    const finalSentence = randomSentence.replace("<ign>", name);
-
-    executeCommand(`/pc ${finalSentence}`);
-}).setName("welcome").setAliases("here", "hello");
+  ChatLib.say("/pc " + formattedSentence);
+  idx++;  
+}).setName("shalom");
