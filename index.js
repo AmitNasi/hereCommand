@@ -10,14 +10,10 @@ var sentences = [
     "Whilst delving into the catacombs and facing the most worrisome of enemies, This is the one player you would want on your side <ign>"
 ];
 
-
-register("command", (name) => 
-    var randomInt = Math.floor(Math.random() * 9);
+register("command", (name) => {
+    var randomInt = Math.floor(Math.random() * 9); // Random index from 0 to 8
     var randomSentence = sentences[randomInt];
-
     var finalSentence = randomSentence.replace("<ign>", name);
-
-    executeCommand("/pc " + finalSentence);
     
+    executeCommand("/pc " + finalSentence);
 }).setName("welcome").setAliases("here", "hello");
-
