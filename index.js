@@ -7,7 +7,7 @@ var sentences = [
     "Lo and behold, the man of whom legends are told. He is no troll, he is no joke, before the runs he snorts some coke, <ign>!!",
     "When the battlefield trembles, and the opposition crumbles, there's one name that constantly rumbles <ign>, every mob's worst nightmare.",
     "Is it an aeroplane? Is it a bird? NO, it is the man, the myth, the legend- <ign>",
-    "Whilst delving into the catacombs and facing the most worrisome of enemies; This is the one player you would want on your side <ign>"
+    "Whilst delving into the catacombs and facing the most worrisome of enemies, This is the one player you would want on your side <ign>"
 ];
 
 
@@ -17,7 +17,7 @@ register("command", (name) =>
 
     var finalSentence = randomSentence.replace('<ign>', name);
 
-    ChatLib.chat(finalSentence);
+    executeCommand("/pc " + finalSentence);
     
 }).setName("welcome").setAliases("here", "hello");
 
