@@ -8,6 +8,13 @@ const sentences = [
     "When the battlefield trembles, and the opposition crumbles, there's one name that constantly rumbles <ign>, every mob's worst nightmare.",
     "Is it an aeroplane? Is it a bird? NO, it is the man, the myth, the legend- <ign>",
     "Whilst delving into the catacombs and facing the most worrisome of enemies; This is the one player you would want on your side <ign>"
+    "With a controller in hand and a headset on, <ign> dominates every lobby, always staying cool as the dawn, in the gaming world, he's the true don.",
+    "In the realm of dungeons and dragons, where legends and myths come alive, <ign> is the hero who will thrive, leading his team to victory",
+    "As the sun sets and the moon rises, <ign> emerges from the gaming horizon, unleashing his extraordinary power, leaving foes in utter disbelief.",
+    "When the chips are down and the odds seem grim, <ign> never loses his composure, turning the tide with one bold move.",
+    "Armed with a keyboard and mouse, <ign> takes to the battlefield, outsmarting others all with his strategic prowess.",
+    "Even when the servers crash and networks fail, <ign> remains a dungeons legend, defeating the entire floor before attending to his network issues .",
+    "When the secrets count reveals the day's story, <ign> stands as the MVP, displaying unwavering skill and confidence."
 ];
 
 let idx = 0;
