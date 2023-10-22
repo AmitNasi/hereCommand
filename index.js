@@ -20,3 +20,8 @@ register("command", () => {
   artOfWarIndex++;  
 }).setName("artofwar");
 
+register("chat", (player, drop, event) => {
+  let randomNum = Math.floor(Math.random() * (100 - 30 + 1)) + 30;
+  let sentence = "There is a "+ randomNum + " chance that "+ player + " will get " + drop;
+  ChatLib.say("/pc " + sentence);
+}).setCriteria("Will ${player} get ${drop}").setContains();
